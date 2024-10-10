@@ -1,0 +1,968 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<style>
+
+    #main {
+        display: block;
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+        padding-bottom: 50px;
+    }
+
+    .left {
+        display: block;
+        width: 60%;
+    }
+
+    .khunggiaohang {
+        display: block;
+        padding: 30px;
+        padding-top: 16px;
+        background-color: white;
+        margin-bottom: 16px;
+    }
+
+    .giao {
+        display: block;
+        border: solid 1px;
+        border-color: cornflowerblue;
+        border-radius: 5px;
+        padding: 30px;
+        justify-content: space-between;
+        background-color: aliceblue;
+        width: 55%;
+    }
+
+    .khuyenmai {
+        color: limegreen;
+        border: none;
+        background-color: white;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    fieldset {
+        display: block;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .content-giao {
+        display: flex;
+        width: 100%;
+        background-color: white;
+    }
+
+    .anhsp {
+        background-color: white;
+    }
+
+    .sanpham img {
+        width: 50px;
+    }
+
+    .trentrai {
+        justify-content: space-between;
+        width: 65%;
+        background-color: white;
+    }
+
+    .tieudegiao {
+        margin-right: 46px;
+    }
+
+    .tieudegiaonho {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .cacloaigia {
+        display: block;
+        font-size: 14px;
+        margin-block-start: 1.67em;
+        margin-block-end: 1.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        background-color: white;
+    }
+
+    .giagoc {
+        text-decoration-line: line-through;
+    }
+
+    .sanpham {
+        display: block;
+    }
+
+    .sanphamnho {
+        display: flex;
+    }
+
+    .dong1 {
+        display: flex;
+        padding-right: 10px;
+        background-color: white;
+    }
+
+    .dong2 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .giasp {
+        font-weight: bold;
+        background-color: white;
+    }
+
+    .soluong {
+        background-color: white;
+    }
+
+    .gia {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .trenphai {
+        background-color: white;
+    }
+
+        .trenphai h5 {
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: gainsboro;
+        }
+
+    legend {
+        color: limegreen;
+        font-weight: bold;
+    }
+
+    .makhuyenmai {
+        display: block;
+        text-align: left;
+        background-color: white;
+        margin-top: 7px;
+    }
+
+        .makhuyenmai a {
+            text-decoration-line: none;
+            color: #000000;
+        }
+
+            .makhuyenmai a b {
+                color: darkgray;
+            }
+
+    .hinhThucThanhToan {
+        display: block;
+        padding: 30px;
+        padding-top: 16px;
+        background-color: white;
+        align-items: center;
+    }
+
+        .hinhThucThanhToan img {
+            width: 40px;
+            height: 30px;
+            padding-right: 10px;
+        }
+
+    .atm {
+        background-color: white;
+    }
+
+    .nutthemthe {
+        border: solid 1px;
+        border-color: cornflowerblue;
+        border-radius: 5px;
+        width: 150px;
+        height: 40px;
+        font-size: 17px;
+        color: cornflowerblue;
+        margin-left: 25px;
+        margin-top: 20px;
+        background-color: white;
+    }
+
+    .uudaithenganhang {
+        display: block;
+        margin-left: 25px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        background-color: lightsteelblue;
+    }
+
+    .cacuudai {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        background-color: lightsteelblue;
+    }
+
+    .tieudeuudai {
+        padding: 15px;
+        padding-left: 0px;
+        color: dodgerblue;
+        font-weight: bold;
+        background-color: lightsteelblue;
+    }
+
+    .uudai1 {
+        border-radius: 6px;
+        padding-left: 10px;
+        background-color: white;
+    }
+
+    .anhshihan {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: dodgerblue;
+        background-color: white;
+    }
+
+        .anhshihan img {
+            width: 55px;
+            height: 15px;
+        }
+
+    .anhmbbank {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        color: dodgerblue;
+    }
+
+        .anhmbbank img {
+            width: 40px;
+            height: 50px;
+        }
+
+    .anhvitiki {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        color: dodgerblue;
+    }
+
+        .anhvitiki img {
+            width: 40px;
+            height: 30px;
+        }
+
+    #ptud {
+        font-size: 14px;
+        color: lightslategrey;
+    }
+
+    #han {
+        font-size: 14px;
+        color: darkorange;
+        font-style: italic;
+    }
+
+    .right {
+        display: block;
+    }
+
+    .khungthongtingiaohang {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        padding-top: 0px;
+        background-color: white;
+        margin-bottom: 16px;
+        margin-left: 16px;
+    }
+
+    .kttghdong1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        margin-bottom: -25px;
+    }
+
+        .kttghdong1 h3 {
+            color: darkgrey;
+        }
+
+        .kttghdong1 a {
+            text-decoration-line: none;
+            color: cornflowerblue;
+            font-weight: bold;
+        }
+
+    .kttghdong2 {
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+        .kttghdong2 p {
+            font-weight: bold;
+        }
+
+        .kttghdong2 span {
+            margin: 0px 10px;
+            width: 1px;
+            height: 17px;
+            display: block;
+            background-color: lightslategrey;
+        }
+
+    .kttghdong3 {
+        display: flex;
+        background-color: white;
+        color: lightslategrey;
+    }
+
+        .kttghdong3 button {
+            border: none;
+            background-color: palegreen;
+            color: green;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+    .khungtikikm {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        background-color: white;
+        margin-bottom: 16px;
+        margin-left: 16px;
+    }
+
+    .ktkkmdong1 {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+    }
+
+        .ktkkmdong1 span {
+            color: lightslategrey;
+            font-weight: normal;
+        }
+
+    .ktkkmdong2 {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: white;
+        margin-top: 10px;
+    }
+
+        .ktkkmdong2 img {
+            width: 50px;
+            border: solid 1px grey;
+            padding: 5px;
+            border-radius: 0 5px 5px 0;
+            border-inline-end: dashed 1px grey;
+        }
+
+    .giamgia {
+        display: flex;
+        border: solid 1px grey;
+        justify-content: space-between;
+        width: 70%;
+        padding: 5px;
+        border-radius: 0 5px 5px 0;
+        border-inline-start: dashed 1px grey;
+        background-color: white;
+    }
+
+        .giamgia button {
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: dodgerblue;
+            border: none;
+            padding: 0px 5px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    .ktkkmdong3 {
+        display: block;
+        align-items: center;
+        margin-top: 16px;
+        background-color: white;
+        color: dodgerblue;
+    }
+
+        .ktkkmdong3 button {
+            border: none;
+            color: dodgerblue;
+            background-color: white;
+        }
+
+    .khungapdung {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        background-color: white;
+        margin-bottom: 16px;
+        margin-left: 16px;
+    }
+
+    .kapdong1 {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .kapdong2 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        align-items: center;
+        border-bottom: solid 1px grey;
+    }
+
+    .kapdong3 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        align-items: center;
+    }
+
+    .kappvanban {
+        font-size: 12px;
+        background-color: white;
+    }
+
+    .switch {
+        background-color: white;
+    }
+
+        .switch input {
+            width: 40px;
+            height: 20px;
+            appearance: none;
+            background-color: lightgray;
+            border-radius: 25px;
+            position: relative;
+            margin-right: 20px;
+        }
+
+            .switch input::before {
+                content: " ";
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                border-radius: 50%;
+                top: 3px;
+                left: 3px;
+                background-color: white;
+                cursor: pointer;
+            }
+
+            .switch input:checked {
+                background-color: lawngreen;
+            }
+
+                .switch input:checked:before {
+                    left: 22px;
+                }
+
+    .khungxuathd {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        background-color: white;
+        margin-bottom: 16px;
+        margin-left: 16px;
+    }
+
+        .khungxuathd p {
+            color: dimgrey;
+            margin-left: 23px;
+            margin-bottom: 0px;
+            margin-top: 8px;
+        }
+
+    .khungdonhang {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        padding-top: 0px;
+        padding-bottom: 14px;
+        background-color: white;
+        margin-left: 16px;
+        border-bottom: solid 1px grey;
+    }
+
+    .kdhdong1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        margin-bottom: -25px;
+    }
+
+        .kdhdong1 a {
+            text-decoration-line: none;
+            color: cornflowerblue;
+            font-weight: bold;
+        }
+
+    .kdhdong2 {
+        padding-top: 10px;
+        color: dimgray;
+        background-color: white;
+    }
+
+        .kdhdong2 a {
+            text-decoration-line: none;
+        }
+
+    .khunggiadonhang {
+        display: block;
+        width: 300px;
+        padding: 30px;
+        padding-top: 16px;
+        background-color: white;
+        margin-top: 0px;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        color: dimgrey;
+    }
+
+    .khunggdh1 {
+        display: grid;
+        gap: 10px;
+        background-color: white;
+        border-bottom: solid 1px grey;
+    }
+
+    .kgdhdong1 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+        .kgdhdong1 span {
+            color: black;
+        }
+
+    .kgdhdong2 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+        .kgdhdong2 span {
+            color: black;
+        }
+
+    .kgdhdong3 {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding-bottom: 10px;
+    }
+
+        .kgdhdong3 span {
+            color: limegreen;
+        }
+
+    .khunggdh2 {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 8px;
+        background-color: white;
+        margin-bottom: -10px;
+    }
+
+        .khunggdh2 h2 {
+            color: red;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: right;
+        }
+
+        .khunggdh2 p {
+            margin-top: 5px;
+            color: dimgray;
+        }
+
+    .tonggiatien {
+        background-color: white;
+    }
+
+    .tongtien {
+        background-color: white;
+    }
+
+    .khunggdh3 {
+        color: dodgerblue;
+        font-weight: bold;
+        background-color: white;
+        font-style: oblique;
+    }
+
+        .khunggdh3 span {
+            color: black;
+            font-style: normal;
+        }
+
+    .dathang {
+        margin-top: 8px;
+        width: 300px;
+        height: 40px;
+        background-color: red;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+<section id="main">
+    <section id="container">
+        <div class="left">
+            <div class="khunggiaohang">
+                <h4>Chọn hình thức giao hàng</h4>
+                <div class="giao">
+                    <input type="radio" value="">
+                    <label>Giao tiết kiệm</label>
+                    <button class="khuyenmai">-30k</button>
+
+                </div>
+                <fieldset>
+                    <legend><i class="fas fa-box"></i> Gói: Giao thứ 5, trước 19h, 26/10</legend>
+                    <div class="content-giao">
+                        <div class="trentrai">
+                            <div class="tieudegiao">
+                                <div class="tieudegiaonho">
+                                    <h5>GIAO TIẾT KIỆM</h5>
+                                    <div class="cacloaigia">
+                                        <span class="giagoc">42.000đ</span>
+                                        <span class="giasaugiam">12.000đ</span>
+                                    </div>
+                                </div>
+                                <div class="sanpham">
+                                    <div class="sanphamnho">
+                                        <div class="anhsp">
+                                            <img src="/Content/img/dienthoai.png">
+                                        </div>
+                                        <div class="ten">
+                                            <div class="dong1">
+                                                <span class="dong1sp">Điện thoại Samsung Galaxy A54 5G 8GB/128GB, chính hãng, bảo hành, yên tâm đổi trả 1 1 trong vòng 1 tuần</span>
+                                            </div>
+                                            <div class="dong2">
+                                                <div class="soluong">
+                                                    SL: x1
+                                                </div>
+                                                <div class="giasp">
+                                                    <span class="dong2giasp">8.480.000đ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trenphai">
+                            <h5>Được giao hàng bởi GIA DỤNG VIỆT</h5>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="makhuyenmai">
+                    <a href="#">Shop khuyến mãi <b>Nhập mã hoặc chọn mã &gt;</b></a>
+                </div>
+            </div>
+            <div class="hinhThucThanhToan">
+                <h4>Chọn hình thức thanh toán</h4>
+
+                <input type="radio" name="httt" value="khinhanhang">
+                <label>
+                    <img src="/Content/img/ttknh.png">
+                    Thanh toán tiền mặt khi nhận hàng
+                </label>
+                <div></div>
+                <input type="radio" name="httt" value="viettelmoney">
+                <label>
+                    <img src="/Content/img/viettelmoney.png">
+                    Thanh toán bằng ví Viettel Money
+                </label>
+                <div></div>
+                <input type="radio" name="httt" value="momo">
+                <label>
+                    <img src="/Content/img/momo.png">
+                    Thanh toán bằng ví MoMo
+                </label>
+                <div></div>
+                <input type="radio" name="httt" value="zalopay">
+                <label>
+                    <img src="/Content/img/zalopay.png">
+                    Thanh toán bằng ví Zalopay
+                </label>
+                <div></div>
+                <input type="radio" name="httt" value="vnpay">
+                <label>
+                    <img src="/Content/img/vnpay.png">
+                    Thanh toán bằng ví VNPAY
+                </label>
+                <div></div>
+                <input type="radio" name="httt" value="thenganhang">
+                <label>
+                    <img src="/Content/img/thenganhang.png">
+                    Thanh toán khi nhận hàng
+                </label>
+                <div></div>
+                <button class="nutthemthe">
+                    + Thêm thẻ mới
+                </button>
+                <div class="uudaithenganhang">
+                    <div class="tieudeuudai">
+                        <i class="fas fa-percent"></i>
+                        Ưu đãi thanh toán thẻ
+                    </div>
+                    <div class="cacuudai">
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Freeship</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Thẻ Shinhan Platinum</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 30k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 200k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 50k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 300k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 50k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 300k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 70k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 500k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 100k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 700k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 150k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 1 triệu</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 30k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 200k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 50k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 300k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 70k</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 500k</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Freeship</h4>
+                                <img src="~/Content/img/shinhan-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Thẻ Shinhan Classic</p>
+                            <p id="han">Số lượng có hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhshihan">
+                                <h4>Giảm 50k</h4>
+                                <img src="~/Content/img/HDsaigon.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 200k</p>
+                            <p id="han">Sắp cháy lượt</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhmbbank">
+                                <h4>Giảm 50k</h4>
+                                <img src="~/Content/img/mb-bank-logo.png" />
+                            </div>
+                            <p id="ptud">Đơn từ 500k</p>
+                            <p id="han">Số lượng có hạn</p>
+                        </div>
+                        <div class="uudai1">
+                            <div class="anhvitiki">
+                                <h4>Freeship</h4>
+                                <img src="~/Content/img/vitiki.png" />
+                            </div>
+                            <p id="ptud">TikiCARD</p>
+                            <p id="han">Không giới hạn</p>
+                        </div>
+                    </div>
+                </div>
+                <input type="radio" name="httt" value="theatm">
+                <label>
+                    <i class="far fa-credit-card"></i>
+                    Thẻ ATM nội địa/Internet Banking (Hỗ trợ Internet Banking)
+                </label>
+            </div>
+        </div>
+        <div class="right">
+            <div class="khungthongtingiaohang">
+                <div class="kttghdong1">
+                    <h3>Giao tới</h3>
+                    <a href="#">Thay đổi</a>
+                </div>
+                <div class="kttghdong2">
+                    <p>Quoc Tran Bao</p>
+                    <span></span>
+                    <p>0328370905</p>
+                </div>
+                <div class="kttghdong3">
+                    <button class="nha">Nhà</button>
+                    52 Trần Hưng Đạo, Phường 04, Quận 05, Hồ Chí Minh
+                </div>
+            </div>
+            <div class="khungtikikm">
+                <div class="ktkkmdong1">
+                    Tiki Khuyến Mãi
+                    <span>Có thể chọn 2</span>
+                </div>
+                <div class="ktkkmdong2">
+                    <img src="~/Content/img/zalopay.png" />
+                    <div class="giamgia">
+                        <p>Giảm 50k</p>
+                        <button>Áp dụng</button>
+                    </div>
+                </div>
+                <div class="ktkkmdong3">
+                    <i class="fas fa-ticket-alt"></i>
+                    <button>
+                        Chọn hoặc nhập Khuyến mãi khác
+                    </button>
+                </div>
+            </div>
+            <div class="khungapdung">
+                <div class="kapdong1">
+                    Thử ngay: Giảm giá cho đơn hàng bằng ASA
+                </div>
+                <div class="kapdong2">
+                    <div class="kappvanban">
+                        <pre><b>Chưa áp dụng giảm giá</b>
+Vì chưa đạt đủ số lượng ASA</pre>
+                    </div>
+                    <div class="switch">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="kapdong3">
+                    <div class="kappvanban">
+                        <pre><b>Chưa áp dụng giảm giá</b>
+Vì sở hữu chưa đủ tối thiểu 1000 xu</pre>
+                    </div>
+                    <div class="switch">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </div>
+            <div class="khungxuathd">
+                <input type="checkbox" />
+                <span>Yêu cầu hóa đơn</span>
+                <p>Tiki Trading chỉ xuất hóa đơn điện tử</p>
+            </div>
+            <div class="khungdonhang">
+                <div class="kdhdong1">
+                    <h3>Đơn hàng</h3>
+                    <a href="#">Thay đổi</a>
+                </div>
+                <div class="kdhdong2">
+                    1 sản phẩm. <a href="#">Xem thông tin</a>
+                </div>
+            </div>
+            <div class="khunggiadonhang">
+                <div class="khunggdh1">
+                    <div class="kgdhdong1">
+                        Tạm tính
+                        <span id="giasanpham">8.480.000đ</span>
+                    </div>
+                    <div class="kgdhdong2">
+                        Phí vận chuyển
+                        <span id="pvc">42.000đ</span>
+                    </div>
+                    <div class="kgdhdong3">
+                        Khuyến mãi vận chuyển
+                        <span>-30.000đ</span>
+                    </div>
+                </div>
+                <div class="khunggdh2">
+                    <div class="tongtien">
+                        Tổng tiền
+                    </div>
+                    <div class="tonggiatien">
+                        <input type="text" id="tt" name="tien" onchange="TinhTongTien()" />
+                        <p>(Đã bao gồm VAT nếu có)</p>
+                    </div>
+                </div>
+                <div class="khunggdh3">
+                    FREESHIP
+                    <span>đã được áp dụng!</span>
+                </div>
+                <input type="button" class="dathang" value="Đặt hàng" onclick="HienThi();" />
+            </div>
+        </div>
+    </section>
+</section>

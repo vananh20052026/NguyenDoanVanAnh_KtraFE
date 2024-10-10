@@ -1,0 +1,96 @@
+﻿<style type="text/css">
+    html {
+        font-size: 17px;
+    }
+
+    header {
+        display: block;
+    }
+
+    body {
+        display: block;
+    }
+
+    #header-container {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px;
+        background-color: white;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+    .gachdoc {
+        margin: 0px 10px;
+        width: 2px;
+        height: 30px;
+        display: block;
+        background-color: dodgerblue;
+    }
+
+    .tentrangtiki {
+        color: dodgerblue;
+    }
+
+    .hotline img {
+        height: 70px;
+        width: auto;
+    }
+
+    div {
+        background-color: gainsboro;
+    }
+</style>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <script>
+        language = "Javascript"
+        function TinhTongTien() {
+            var tamtinh = parseFloat(document.getElementById("giasanpham").value);
+            var phivanchuyen = parseFloat(document.getElementById("pvc").value);
+            var magiampvc = parseFloat(document.getElementById("khuyenmaipvc").value);
+            window.document.getElementById("tt").value = tamtinh + phivanchuyen + magiampvc;
+        }
+        function HienThi() {
+            alert("Dat hang thanh cong");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <section id="header-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="/Content/img/Logo_Tiki_2023.png">
+                </a>
+                <span class="gachdoc"></span>
+                <span class="tentrangtiki">Thanh toán</span>
+            </div>
+            <div class="hotline">
+                <a href="#">
+                    <img src="/Content/img/hotline.png">
+                </a>
+            </div>
+        </section>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
